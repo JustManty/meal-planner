@@ -1,13 +1,237 @@
+:root {
+  --color-background: #162347;
+  --color-background-light: #1F3E94;
+  --color-primary: #679426;
+  --color-primary-dark: #30470F;
+  --color-secondary: #47251D;
+}
+
+html * {
+  background-color: var(--color-background);
+  color: white;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  font-size: 30pt;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
+}
+
+.top-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px 0 2px;
+}
+
+ul.top-nav li {
+  display: inline;
+  padding: 0 50px;
+}
+
+ul.top-nav li i {
+  height: 10px;
+  width: 10px;
+}
+
+ul.top-nav li button {
+  background-color: transparent;
+  border: none;
+  font-size: 80%;
+  color: white;
+}
+
+ul.top-nav li button:hover {
+  font-style: italic;
+  font-weight: bold;
+  text-shadow: red;
+}
+
+ul.top-nav li button.selected {
+  text-decoration: underline ;
+  text-decoration-thickness: 1px;
+}
+
+.top-nav-hr {
+  margin: 5px auto;
+  width: 80%;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+}
+
+.meal, .ingredient {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.2));
+  display: block;
+  margin: 15px auto;
+  border-radius: 15px;
+  width: 70%;
+}
+
+.meal-label, .ingredient-label {
+  background-color: transparent;
+  border-right: rgb(255, 255, 255, 0.1);
+  border-right-style: dotted;
+  border-right-width: 1px;
+  display: inline-block;
+  margin: auto 0;
+  text-align: left;
+  vertical-align: middle;
+  width: 15%;
+}
+
+.meal-title, .ingredient-title {
+  background-color: transparent;
+  display: inline-block;
+  margin: auto 0;
+  text-align: center;
+  vertical-align: middle;
+  width: 75%;
+}
+
+.deleteMealButton, .deleteIngredientButton {
+  margin: auto;
+  vertical-align: middle;
+  width: 10%;
+}
+
+.deleteButtonIcon, .removeButtonIcon {
+  margin: auto;
+}
+
+.meal-label p {
+  background-color: transparent;
+  font-size: 70%;
+  margin: auto;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.meal-title p {
+  background-color: transparent;
+  font-size: 75%;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+label.recipeName {
+  background-color: transparent;
+  font-size: 70%;
+  margin: auto;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+input.recipeName {
+  background-color: transparent;
+  font-size: 75%;
+  margin: auto;
+  vertical-align: middle;
+  border: none;
+  border-radius: 500px;
+}
+
+.deleteButton, .removeButton {
+  background-color: transparent;
+  border: none;
+}
+
+.deleteButton *, .removeButton * {
+  background-color: transparent;
+}
+
+.deleteButton:hover, .deleteButton:hover {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 500px;
+}
+
+button.addMeal, button.saveButton, button.cancelButton, button.addIngredientButton {
+  background-color: transparent;
+  border: none;
+  font-size: 80%;
+  width: 40%;
+  min-width: 500px;
+  max-width: 600px;
+}
+
+button.addMeal , button.addIngredientButton{
+  display: inline-block;
+}
+
+.searchBoxContainer {
+  display: inline-block;
+  margin: auto;
+}
+
+.searchBox {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: white 1px;
+  border-radius: 500px;
+  margin: auto;
+}
+
+.searchBoxSubmitButton {
+  border: none;
+}
+
+button.addMeal:hover, button.saveButton:hover, button.cancelButton:hover, button.addIngredientButton:hover {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 500px;
+}
+
+.addMealIcon, .saveButtonIcon, .cancelButtonIcon, .searchBoxSubmitButtonIcon, .addIngredientIcon {
+  border-radius: 500px;
+  border: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.2));
+  height: 20px;
+  width: 20px;
+  padding: 10px;
+  margin-right: 5px;
+}
+
+.addMealIcon:hover, .saveButtonIcon:hover, .cancelButtonIcon:hover, .searchBoxSubmitButtonIcon:hover {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+}
+
+button.generateShoppingList {
+  background-color: transparent;
+  border: none;
+  font-size: 80%;
+  width: 40%;
+  min-width: 500px;
+  max-width: 600px;
+}
+
+button.generateShoppingList:hover {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 500px;
+}
+
+.generateShoppingListIcon {
+  border-radius: 500px;
+  border: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.2));
+  height: 20px;
+  width: 20px;
+  padding: 10px;
+  margin-right: 5px;
+}
+
+.generateShoppingListIcon:hover {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
 }
