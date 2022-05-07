@@ -1,10 +1,13 @@
 import './App.css';
 import Controller from "./Components/Controller";
+import React from 'react';
 
 function App() {
   return (
     <div className="App">
-      <Controller />
+      <React.StrictMode>
+        <Controller />
+      </React.StrictMode>
     </div>
   );
 }

@@ -75,7 +75,7 @@ ul.top-nav li button.selected {
   width: 70%;
 }
 
-.meal-label, .ingredient-label {
+.meal-label {
   background-color: transparent;
   border-right: rgb(255, 255, 255, 0.1);
   border-right-style: dotted;
@@ -87,7 +87,7 @@ ul.top-nav li button.selected {
   width: 15%;
 }
 
-.meal-title, .ingredient-title {
+.meal-title {
   background-color: transparent;
   display: inline-block;
   margin: auto 0;
@@ -96,14 +96,53 @@ ul.top-nav li button.selected {
   width: 75%;
 }
 
-.deleteMealButton, .deleteIngredientButton {
+.ingredientMeasurementInfo {
+  background-color: transparent;
+  display: inline-block;
+  border-right: rgb(255, 255, 255, 0.1);
+  border-right-style: dotted;
+  border-right-width: 1px;
+  margin: auto;
+  vertical-align: middle;
+  width: 20%;
+}
+
+.ingredientQuantity, .ingredientMeasurement {
+  border: none;
+  background-color: transparent;
+  align-content: center;
+  margin: auto;
+  width: 100%;
+  font-size: 70%;
+}
+
+.ingredientName {
+  display: inline-block;
+  width: 60%;
+  margin: 3%;
+  background-color: transparent;
+  border-width: 0 0 1px;
+  border-color: rgb(255,255,255);
+  font-size: 70%;
+}
+
+.deleteMealButton {
   margin: auto;
   vertical-align: middle;
   width: 10%;
 }
 
-.deleteButtonIcon, .removeButtonIcon {
+.deleteIngredientButton {
+  background-color: transparent;
+  border: none;
   margin: auto;
+  vertical-align: middle;
+  width: 10%;
+}
+
+.deleteButtonIcon, .removeButtonIcon, .deleteIngredientButtonIcon {
+  margin: auto;
+  background-color: transparent;
 }
 
 .meal-label p {
@@ -150,7 +189,7 @@ input.recipeName {
   background-color: transparent;
 }
 
-.deleteButton:hover, .deleteButton:hover {
+.deleteButton:hover, .deleteButton:hover, .deleteIngredientButton:hover {
   border-style: solid;
   border-width: 1px;
   border-radius: 500px;

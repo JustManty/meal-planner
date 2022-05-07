@@ -25,14 +25,12 @@ class Controller extends React.Component {
 
     return (
       <div>
-        <React.StrictMode>
           <NavBar
             selected={selectedPage}
             onClickEdit={() => this.toggleSelectedPage("edit")}
             onClickPlan={() => this.toggleSelectedPage("plan")}
           />
           {visiblePage}
-        </React.StrictMode>
       </div>
     );
   }

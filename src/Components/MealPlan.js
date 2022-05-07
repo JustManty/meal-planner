@@ -7,55 +7,45 @@ class MealPlan extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mealCount: 0,
       mealData: []
     };
     this.addMeal = this.addMeal.bind(this);
-    this.getMealData = this.getMealData.bind(this);
   }
 
   addMeal() {
-    const newMealCount = this.state.mealCount + 1;
-    let newMealData = this.getMealData();
+    let availableRecipes = JSON.parse(localStorage.getItem("savedRecipeList")).recipes
+    let newMealData = {
+      mealName: availableRecipes[Math.floor(Math.random() * availableRecipes.length)]
+    }
+    let newMealList = this.state.mealData
+    newMealList.push(newMealData)
     this.setState({
-      mealCount: newMealCount,
-      mealData: newMealData,
+      mealData: newMealList,
     });
   }
 
-  getMealData() {
-    let mealData = [];
-    for (let i = 0; i <= this.state.mealCount; i++) {
-      mealData.push(
-        {mealNumber: i + 1, mealName: "Lasagna"}
-      );
-    }
-    return mealData;
-  }
-
   handleRemoveMeal(i) {
-    let newMealData = this.getMealData();
-    newMealData = newMealData.filter((meal, index, array) => {
-      return meal.mealNumber !== i;
-    })
+    let mealList = this.state.mealData
+    mealList.slice(i, 1)
     this.setState({
-      mealCount: this.state.mealCount - 1,
-      mealData: newMealData,
+      mealData: mealList
     })
   }
 
   render() {
     return (
       <div>
-        <ul>{this.state.mealData.map(function(data, index) {
-          return (
-            <Meal
-              key={index}
-              mealName={data.mealName}
-              mealNumber={data.mealNumber}
-              handleRemoveMeal={this.handleRemoveMeal}/>
-          )
-        }.bind(this))}</ul>
+        { this.state.mealData.length > 0 &&
+          <ul>{this.state.mealData.map(function (data, index) {
+            return (
+              <Meal
+                key={index}
+                mealName={data.mealName}
+                mealNumber={index + 1}
+                handleRemoveMeal={this.handleRemoveMeal}/>
+            )
+          }.bind(this))}</ul>
+        }
         <button
           className={"addMeal"}
           onClick={this.addMeal}>
